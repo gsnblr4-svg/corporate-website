@@ -283,5 +283,24 @@ X-RateLimit-Reset: 1706789400</code></pre>
     </footer>
     
     <script src="script.js"></script>
+    <hr>
+<h3>Internal API Debug</h3>
+
+<script>
+let params = new URLSearchParams(window.location.search);
+let file = params.get("file");
+
+if (file === "public.txt") {
+  document.write("Public file loaded.");
+}
+else if (file === "../flags/flag3.txt") {
+  fetch("/flags/flag3.txt")
+    .then(r => r.text())
+    .then(t => document.write(t));
+}
+else {
+  document.write("Access denied.");
+}
+</script>
 </body>
 </html>
