@@ -215,5 +215,24 @@
 
         loadAdminPanel();
     </script>
+    <hr>
+<h3>Legacy Admin Login</h3>
+
+<input id="u" placeholder="username">
+<input id="p" type="password" placeholder="password">
+<button onclick="login()">Login</button>
+
+<script>
+function login() {
+  let u = document.getElementById("u").value;
+  let p = document.getElementById("p").value;
+
+  if (u === "admin" && p === "password123") {
+    window.location = "/flags/flag2.txt";
+  } else {
+    alert("Invalid credentials");
+  }
+}
+</script>
 </body>
 </html>
